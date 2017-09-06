@@ -26,7 +26,8 @@ coreId: 1,
 name: 'My blog',
 keys: [
  { type: 'bearer', key: '823823058' },
- { type: 'bearer', key: '823823493', isReadOnly: true }
+ { type: 'bearer', key: '823823493', isReadOnly: true },
+ { type: 'bearer', key: '823823494', isReadOnly: true, drafts: true, future: true }
 ]
 }
 ```
@@ -59,7 +60,7 @@ projectId: 2,
 documentType: '/content/review',
 isDraft: false,
 isPublished: false,
-data: {
+date: {
       year: 2017,
       month: 6,
       day: 22,
