@@ -7,8 +7,8 @@ Just some random thoughts...
 ```js
 {
 id: 1,
-entity: 'kotori/core',
-instance: 'blabla'
+entity: 'kotori/instance',
+name: 'blabla'
 masterKeys: [
  { type: 'bearer', key: '823823058' },
  { type: 'bearer', key: '823823493' },
