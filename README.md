@@ -8,7 +8,7 @@ Just some random thoughts...
 {
 id: 1,
 entity: 'kotori/core',
-seed: 'blabla'
+instance: 'blabla'
 masterKeys: [
  { type: 'bearer', key: '823823058' },
  { type: 'bearer', key: '823823493' },
