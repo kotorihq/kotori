@@ -1,82 +1,31 @@
 # kotori
 
-Just some random thoughts...
+Hybrid CMS based on headless systems/static generators.
 
-## Main config
+## Stack
 
-```js
-{
-id: 1,
-entity: 'kotori/instance',
-name: 'blabla'
-masterKeys: [
- { type: 'bearer', key: '823823058' },
- { type: 'bearer', key: '823823493' },
-]
-}
-```
+- Database
+  - CosmosDB/DocumentDB
 
-## Projects
+- Elastic search (optional)
+  - Azure Search 
 
-```js
-{
-id: 2,
-entity: 'kotori/project',
-coreId: 1,
-name: 'My blog',
-keys: [
- { type: 'bearer', key: '823823058' },
- { type: 'bearer', key: '823823493', isReadOnly: true },
- { type: 'bearer', key: '823823494', isReadOnly: true, drafts: true, future: true }
-]
-}
-```
+- Blob storage (optional)
+  - Azure storage
 
-## Document types
+## Components
 
-```js
-{
-entity: 'kotori/document-type',
-projectId: 2,
-types: [
- { type: '/content/review', indexMappings: [
-  { from: 'title', to: 'title' },
-  { from: 'author', to: 'text2' }
- ]},
- { type: '/content/news', indexMappings: [] }
-]
-}
+- [kotori-core](https://github.com/kotorihq/kotori-core) - core of the system, .NET Core
+- [kotori-sample-data](https://github.com/kotorihq/kotori-sample-data) - sample (static) project data 
+- [kotori-server](https://github.com/kotorihq/kotori-server) - server REST API, .NET Core
+- [kotori-cli-go](https://github.com/kotorihq/kotori-cli-go) - CLI, Go
+- [kotori-cli](https://github.com/kotorihq/kotori-cli) - CLI, .NET Core [ON HOLD]
 
-```
+## Main principles
 
-## Document 
+Well, we are not secret agents flying in cloaked spaceships so we are not in need of some ultra heavy auth system. That's why we use __simple API keys__.
 
-```js
-{
-id: [guid]
-slug: 'review/fringe',
-entity: 'kotori/document',
-projectId: 2,
-documentType: '/content/review',
-isDraft: false,
-isPublished: false,
-date: {
-      year: 2017,
-      month: 6,
-      day: 22,
-      hour: 0,
-      minute: 0,
-      second: 0,
-      dateTime: "2017-06-22T00:00:00",
-      epoch: 1498089600
-    },
-attributes: [
-   genre: 'sci-fi'
-],
-content: '# hello',
-hash: [sha256]
-}
-}
+TODO: write more, lazy secret agent...
 
 
-```
+
