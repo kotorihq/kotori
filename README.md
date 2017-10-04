@@ -73,10 +73,12 @@ projectKeys: [ { key: <string>, isReadonly: <bool> }, ... ]
 ```
 
 ``instance`` - name of the instance (configured in Web API server)
-``name``- human friendly name of the instance
-``identifier`` ???
 
-TODO: write more, lazy secret agent...
+``name``- human friendly name of the project
+
+``identifier`` - id of the project
+
+``projectKeys`` - a collection of project keys
 
 
 
