@@ -63,22 +63,77 @@ If you change instance name you won't be able to access any documents. There's n
 
 Each running Web API instance is identified by so called ``instance``. All records stored in database are thus identified with ``instance`` name as well. You can have more ``instances`` configured against the same CosmosDb/DocumentDb collection.
 
+```
+|- project 1 |- document type 1 |- document 1
+|                               |- document 2
+|
+|            |- document type 2 |- document 3
+|            
+|- project 2 |- document type 3 |- document 4
+|
+|  ...
+```
+
 ### Project
 
 ```yaml
-instance: <string>,
-name: <string>
+instance: <string>
 identifier: <string>
+name: <string>
 projectKeys: [ { key: <string>, isReadonly: <bool> }, ... ]
 ```
 
 ``instance`` - name of the instance (configured in Web API server)
 
-``name``- human friendly name of the project
-
 ``identifier`` - id of the project
 
+``name``- human friendly name of the project
+
 ``projectKeys`` - a collection of project keys
+
+Project itself is quite straightforwad. ``Name`` is just for future usage (web administration or something).
+If you want to delete a project you need to delete or document types and documents referenced.
+
+### Document type
+
+```yaml
+instance: <string>
+projectId: <string>
+identifier: <string>
+type: <enum>
+indexes: [ { from: <string>, to: <enum> }, ... ]
+
+```
+
+The fields of ``document type`` are not a big interest of you. Basically ``document type`` is auto created or updated. Buy keep in mind that all document operations can be performed against one particular document type.
+
+``Identifier`` is basically a path like ``_content/movie`` or ``_data/directors``. ``Type`` is set based on the first segment of the path to: ``content`` or ``data``.
+
+``Indexes`` are tricky. They are created automatically and you can't modifiy them anyway. In fact ``document type`` can be only requested to being ``get``, ``get all for project`` or ``deleted``. This is implemented by design. ``Indexexes`` are meant only for search operations (Azure Search). Because Azure Search has a limited index capabilities - max number of index fields or index themselves ``Kotori`` does so called ``index mappings``. We have one universal index and each document type maps to different fields accordingly. Plus there are some reserved indexes for properties like ``slug`` or ``date``.
+
+Example:
+
+```csharp
+var meta = new
+{
+ food = new List<string> { "eggs", "ham", "potatoes" },
+ clever = true,
+ bad = new { foo = "bar" }
+};
+```
+
+We will get mapping like that for example:
+
+```
+food -> tags2
+clever -> flag1
+```
+
+As you can see ``bad`` is missing. Only primitive types like ``string``, ``bool``, ``int``, ... and ``a collection of strings`` are supported. The rest are auto omitted.
+
+
+
+
 
 
 
