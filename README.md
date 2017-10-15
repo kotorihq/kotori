@@ -141,6 +141,37 @@ clever -> flag1
 
 As you can see ``bad`` is missing. Only primitive types like ``string``, ``bool``, ``int``, ... and ``a collection of strings`` are supported. The rest are auto omitted.
 
+### Document
+
+As we said there are two types of documents:
+- ``content``
+- ``data`` (not supported at the moment)
+
+The main difference is that ``content`` is just a typical article contains **front matter** (aka meta) and **body** (typically markdown). You can set of course without front matter or without content but at least one part must be set. Front matter can be set as ``YAML`` or ``JSON``.
+
+Article may look like this:
+```markdown
+---
+title: hello
+frontPage: !!bool true
+---
+Well...
+```
+
+or with JSON front matter like that:
+```markdown
+---
+{ "title": "hello", "frontPage": true }
+---
+Well...
+```
+
+Content will be typically in ``markdown`` format but you are free to use whatever you want (other template systems, ...).
+
+
+
+
+
 
 
 
