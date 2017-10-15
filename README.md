@@ -1,5 +1,7 @@
 # kotori
 
+> WORK IN PROGRESS. VERSION 2.0 IS ABOUT TO BE FIRST VERSION READY FOR PRODUCTION!
+
 Hybrid CMS based on headless systems/static generators.
 
 ## Stack
