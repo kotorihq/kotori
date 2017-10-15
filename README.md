@@ -64,15 +64,25 @@ If you change instance name you won't be able to access any documents. There's n
 Each running Web API instance is identified by so called ``instance``. All records stored in database are thus identified with ``instance`` name as well. You can have more ``instances`` configured against the same CosmosDb/DocumentDb collection.
 
 ```
-|- project 1 |- document type 1 |- document 1
-|                               |- document 2
-|
-|            |- document type 2 |- document 3
-|            
-|- project 2 |- document type 3 |- document 4
-|
-|  ...
-```
+  +-----------+  +-----------------+  +------------+  +-----------+
+->| project 1 |->| document type A |->| document 1 |->| version 0 |
+  +-----------+  +-----------------+  +------------+  +-----------+
+              |
+              |  +-----------------+  +------------+  +-----------+
+              .->| document type B |->| document 1 |->| version 0 |
+                 +-----------------+  +------------+  +-----------+
+                                   |
+                                   |  +------------+  +-----------+
+                                   .->| document 2 |->| version 0 |
+                                      +------------+  +-----------+
+                                                   |
+                                                   |  +-----------+
+                                                   .->| version 1 |
+                                                      +-----------+
+  +-----------+                                       
+->| project 2 |
+  +-----------+
+```        
 
 ### Project
 
