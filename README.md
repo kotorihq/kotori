@@ -210,3 +210,5 @@ $date: 2017-01-02
 ---
 Fluffy gorilla says Hi!
 ```
+
+:hatching_chick: All properties are being "camel-cased" by default. So it doesn't matter if you set ``Title`` or ``title``. It means there are built-in checkups for duplicated properties. But keep in mind when you use searching to just use camel casing!
