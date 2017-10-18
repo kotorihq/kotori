@@ -49,6 +49,8 @@ Project keys are stored in database. They are two types of project keys:
 - readonly keys
   - get/search documents
 
+:hatching_chick: As you can see there's no typical hiearchy of keys. __Master keys__ are used only for project manipulations but they cannot be in the project context!
+
 ## Web API server configuration
 
 You can use "classic" configuration file [``appsettings.json``](https://raw.githubusercontent.com/kotorihq/kotori-server/master/KotoriServer/appsettings.json). ENV variables are supported too. So you can set easily application settings like this:
