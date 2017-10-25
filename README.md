@@ -35,7 +35,7 @@ Auth business is being done in [kotori-server](https://github.com/kotorihq/kotor
 
 ### Master key
 
-Master keys are configured per an instance of kotori-server](https://github.com/kotorihq/kotori-server).
+Master keys are configured per an instance of [kotori-server](https://github.com/kotorihq/kotori-server).
 
 Master keys let you:
 - Create a new project
@@ -243,9 +243,9 @@ If we upsert this document we will have eventually 3 data documents stored. And 
 
 ## Acknowledgments (Alphabetic order)
 
-[CommonMark.NET](https://github.com/Knagis/CommonMark.NET) - Markdown
-[Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) - JSON
-[Oogi2](https://github.com/goto10hq/Oogi2) - DocumentDB
-[Shushu](https://github.com/goto10hq/Shushu) - Azure Search
-[Sushi2](https://github.com/goto10hq/Sushi2) - Tools/Helpers
-[YamlDotNet](https://github.com/aaubry/YamlDotNet) - YAML
+- [CommonMark.NET](https://github.com/Knagis/CommonMark.NET) - Markdown
+- [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) - JSON
+- [Oogi2](https://github.com/goto10hq/Oogi2) - DocumentDB
+- [Shushu](https://github.com/goto10hq/Shushu) - Azure Search
+- [Sushi2](https://github.com/goto10hq/Sushi2) - Tools/Helpers
+- [YamlDotNet](https://github.com/aaubry/YamlDotNet) - YAML
